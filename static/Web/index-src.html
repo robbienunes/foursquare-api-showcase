@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html data-ng-app="ANDigitalShowCase">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ANDigital - FourSquare - ShowCase</title>
+
+	<!------------------------------------------CSS---------------------------------------------->
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+    <!-- Custom CSS (BootStrap + Overrides) -->
+	<link href="Content/css/style.css" rel="stylesheet">
+	
+	<!-- Fontawesome -->
+	<link href="Content/css/font-awesome.min.css" rel="stylesheet">
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+    <link href="Dist/css/app.min.css"" rel="stylesheet">
+    <!-- @endif -->
+	<!------------------------------------------CSS---------------------------------------------->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div data-ng-include="'/Web/header/views/header.html'"></div>
+	
+    <!-- Page Content -->
+    <div class="container">
+        <div data-ng-include="'/Web/search/views/searchForm.html'"></div>
+        <hr>
+        <!-- Footer -->
+        <div data-ng-include="'/Web/footer/views/footer.html'"></div>
+
+    </div>
+    <!-- /.container -->
+
+	<!------------------------------------------JS---------------------------------------------->
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	<!--Google Maps-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_VwrLw4AqacQJmlvtJ3fg3JLt2e0b_fA"></script>
+	
+	<!-- AngularJS -->
+	<script type="text/javascript" src="Content/js/lodash.js"></script>
+	<script type="text/javascript" src="Content/js/angular.js"></script>
+	<script type="text/javascript" src="Content/js/angular-simple-logger.min.js"></script>
+	<script type="text/javascript" src="Content/js/angular-google-maps.min.js"></script>
+	<script type="text/javascript" src="/Web/app.js"></script>
+	<script type="text/javascript" src="/Web/search/services/foursquareService.js"></script>
+	<script type="text/javascript" src="/Web/search/controllers/searchControllerForm.js"></script>
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+    <script type="text/javascript" src="Dist/js/app.min.js"></script>
+    <!-- @endif -->
+	
+	<!------------------------------------------JS---------------------------------------------->
+</body>
+
+</html>

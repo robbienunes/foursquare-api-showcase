@@ -1,0 +1,49 @@
+<!-- Search Item Heading -->
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">Search
+			<small>Lookup the venues next to you</small>
+		</h1>
+	</div>
+</div>
+<!-- /.row -->
+
+<!-- Search Item Row -->
+<div class="row" ng-controller="SearchFormController">
+
+	<!--Search box + list of results-->
+	<div class="col-md-4">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search" name="q" data-ng-model="searchFilter" data-ng-keyup="$event.keyCode == 13 && onSearch()">
+			<div class="input-group-btn">
+				<button class="btn btn-default" type="submit" data-ng-click="onSearch()"><i class="fa fa-search"></i></button>
+			</div>
+		</div>
+		</br>
+		<div class="list-group" data-ng-hide="foursqVenues==null">
+			<a href="#" class="list-group-item" data-ng-repeat="venue in foursqVenues" data-ng-click="onFit(venue.id)">
+				<h4 class="list-group-item-heading">{{venue.name}}</h4>
+				<p class="list-group-item-text" ng-hide="venue.address==null">Address: {{venue.address}}</p>
+				<p class="list-group-item-text" ng-hide="venue.contact==null">Contact: {{venue.contact}}</p>
+				<p class="list-group-item-text" ng-hide="venue.url==null">URL: {{venue.url}}</p>
+			</a>
+		</div>
+	</div>
+	
+	<!--Map with pins-->
+	<div class="col-md-8">
+		<ui-gmap-google-map center="map.center" zoom="map.zoom">
+			<ui-gmap-marker ng-repeat="venue in foursqVenues" coords="venue.coords" fit="true" doCluster="false" idkey="venue.id">
+				<ui-gmap-window ng-cloak>
+					<p><span>Name: {{venue.name}}</span>
+					</br>
+					<span>Address: {{venue.address}}</span>
+					</br>
+					<span>Contact: <strong>{{venue.contact}}</span></p></strong>
+				</ui-gmap-window>
+			</ui-gmap-marker>
+		</ui-gmap-google-map>
+	</div>
+
+</div>
+<!-- /.row -->

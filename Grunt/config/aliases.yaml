@@ -1,11 +1,32 @@
+﻿###########################
+build.html.dev:
+  - 'env:dev'
+  - 'preprocess:pro'
+  - 'less:andigital'
+
+build.html.pro:
+  - 'env:pro'
+  - 'preprocess:pro'
+  - 'less:andigital'
 ###########################
 
 build.run:
   - 'express:dev'
 
 build.dev:
-  - 'less:andigital'
+  - 'build.html.dev'
+  - 'open:custom'
   - 'watch:livereload'
+
+build.pro:
+  - 'less:andigital'
+  - 'concat:pro'
+  - 'uglify'
+  - 'cssmin'
+  - 'build.html.pro'
+  - 'htmlmin'
+  - 'clean:tmp'
+  - 'open:custom'
 
 build.dev.tests:
   - 'karma'

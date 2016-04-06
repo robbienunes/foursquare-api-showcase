@@ -12,7 +12,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        'static/Content/js/lodash.js',
 		'static/Content/js/angular.js',
+		'static/Content/js/angular-simple-logger.min.js',
+		'static/Content/js/angular-google-maps.min.js',
 		'static/Web/app.js',
         'static/Web/search/services/foursquareService.js',
 		'static/Web/search/controllers/searchControllerForm.js',
