@@ -14,10 +14,10 @@ A very simple consumer for foursquare api, using Bootstrap, AngularJS, Node.JS a
 		-> grunt build.run
 	
 	2. Compile in one of the following modes:
-		- In "Development" Mode use:
+		- In "Development" Mode:
 			-> grunt build.dev
 			(use Google Chrome extension to LiveReload)
 			-> grunt build.dev.tests (Optional - To run KARMA/JASMIN tests)
 		
-		- In "Production" Mode use:
+		- In "Production" Mode:
 			-> grunt build.pro
