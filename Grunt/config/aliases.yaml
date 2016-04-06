@@ -1,0 +1,13 @@
+###########################
+
+build.run:
+  - 'express:dev'
+
+build.dev:
+  - 'less:andigital'
+  - 'watch:livereload'
+
+build.dev.tests:
+  - 'karma'
+
+###########################
