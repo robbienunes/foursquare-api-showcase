@@ -19,5 +19,5 @@ A very simple consumer for foursquare api, using Bootstrap, AngularJS, Node.JS a
 			(use Google Chrome extension to LiveReload)
 			-> grunt build.dev.tests (Optional - To run KARMA/JASMIN tests)
 		
-		- In "Production" Mode:
+		- In "Production" Mode use:
 			-> grunt build.pro
